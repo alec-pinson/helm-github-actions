@@ -1,4 +1,9 @@
 ::debug::not setting deployment status
+::debug::param: helm = "helm3"
+::debug::param: repo = ""
+::debug::param: repoAlias = ""
+::debug::param: repoUsername = ""
+::debug::param: repoPassword = ""
 ::debug::param: track = "stable"
 ::debug::param: release = "app"
 ::debug::param: appName = "app"
@@ -13,7 +18,6 @@
 ::debug::param: valueFiles = "[]"
 ::debug::param: removeCanary = 
 ::debug::param: timeout = ""
-::debug::param: repository = ""
 ::debug::param: atomic = "true"
 ::debug::env: KUBECONFIG="undefined"
 ::debug::rendering value files [./values.yml] with: {"secrets":{"secret":"val"}}
