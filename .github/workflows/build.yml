@@ -15,7 +15,7 @@ jobs:
       - uses: docker/metadata-action@v4
         id: meta
         with:
-          images: "ghcr.io/${{ github.repository_owner }}/helm-github-action"
+          images: "ghcr.io/${{ github.repository_owner }}/helm-github-actions"
           tags: |
             ${{ github.sha }}
             latest
