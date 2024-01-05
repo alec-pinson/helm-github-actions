@@ -1,4 +1,4 @@
-FROM alpine:3.16.0
+FROM alpine:3.19.0
 
 ENV BASE_URL="https://get.helm.sh"
 
@@ -8,9 +8,7 @@ ENV HELM_3_FILE="helm-v3.13.3-linux-amd64.tar.gz"
 
 ENV PYTHONPATH "/usr/lib/python3.11/site-packages/"
 
-RUN apk add --no-cache ca-certificates \
-    --repository http://dl-3.alpinelinux.org/alpine/edge/community/ \
-    jq curl bash nodejs aws-cli && \
+RUN apk add --no-cache ca-certificates jq curl bash nodejs aws-cli && \
     # Install helm version 2:
     curl -L ${BASE_URL}/${HELM_2_FILE} |tar xvz && \
     mv linux-amd64/helm /usr/bin/helm && \
