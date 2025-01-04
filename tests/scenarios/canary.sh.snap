@@ -12,6 +12,7 @@
 ::debug::param: chart_version = ""
 ::debug::param: values = "{"replicaCount": 1, "image": {"repository": "nginx", "tag": "latest"}}"
 ::debug::param: dryRun = ""
+::debug::param: reuseValues = ""
 ::debug::param: task = ""
 ::debug::param: version = "1234"
 ::debug::param: secrets = "{"secret":"val"}"
