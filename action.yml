@@ -39,6 +39,9 @@ inputs:
     description: Additional value files to apply to the helm chart. Expects JSON encoded
       array or a string.
     required: false
+  reuse-values:
+    description: Optionally deploy helm with the currently set values, boolean.
+    required: false
   secrets:
     description: Secret variables to include in value file interpolation. Expects
       JSON encoded map.

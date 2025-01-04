@@ -202,6 +202,7 @@ async function deploy(helm) {
   const removeCanary = getInput("remove_canary");
   const timeout = getInput("timeout");
   const dryRun = core.getInput("dry-run");
+  const reuseValues = core.getInput("reuse-values");
   const secrets = getSecrets(core.getInput("secrets"));
   const atomic = getInput("atomic") || true;
 
@@ -213,6 +214,7 @@ async function deploy(helm) {
   core.debug(`param: chart_version = "${chartVersion}"`);
   core.debug(`param: values = "${values}"`);
   core.debug(`param: dryRun = "${dryRun}"`);
+  core.debug(`param: reuseValues = "${reuseValues}"`);
   core.debug(`param: task = "${task}"`);
   core.debug(`param: version = "${version}"`);
   core.debug(`param: secrets = "${JSON.stringify(secrets)}"`);
@@ -232,6 +234,7 @@ async function deploy(helm) {
   ];
 
   if (dryRun) args.push("--dry-run");
+  if (reuseValues) args.push("--reuse-values");
   if (appName) args.push(`--set=app.name=${appName}`);
   if (version) args.push(`--set=app.version=${version}`);
   if (chartVersion) args.push(`--version=${chartVersion}`);
